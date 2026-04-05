@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>U.S. Visa Wait Times — Global Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<style>
+/* ── Design Tokens ── */
+:root {
+  --bg: #f4f3ef;
+  --surface: #ffffff;
+  --surface2: #f9f8f5;
+  --border: #e2e0da;
+  --text: #1a1916;
+  --text2: #6b6860;
+  --text3: #9b9890;
+  --teal: #015f65;
+  --teal-lt: #d8ecea;
+  --teal-md: #a8d5d3;
+  --amber: #c47a00;
+  --amber-lt: #fdf0d5;
+  --rust: #984018;
+  --rust-lt: #fde8d8;
+  --purple: #7a3090;
+  --purple-lt: #f0e0f8;
+  --green: #2d7a3a;
+  --green-lt: #d8f0dc;
+  --shadow: 0 1px 3px rgba(0,0,0,.07), 0 4px 12px rgba(0,0,0,.05);
+  --radius: 12px;
+  --font: 'IBM Plex Sans', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+}
+
+/* ── Reset ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:15px;line-height:1.5}
+button{font-family:inherit;cursor:pointer}
+
+/* ── Layout ── */
+.shell{display:grid;grid-template-columns:272px 1fr;min-height:100vh}
+.sidebar{background:var(--surface);border-right:1px solid var(--border);padding:20px 16px;display:flex;flex-direction:column;gap:4px;overflow-y:auto}
+.content{padding:20px;overflow:auto;display:flex;flex-direction:column;gap:16px}
+
+/* ── Sidebar ── */
+.logo{padding:4px 8px 12px;border-bottom:1px solid var(--border);margin-bottom:8px}
+.logo-title{font-size:13px;font-weight:700;color:var(--text);letter-spacing:.02em;text-transform:uppercase}
+.logo-sub{font-size:11px;color:var(--text3);margin-top:2px}
+
+.section-label{font-size:10px;font-weight:700;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;padding:12px 8px 4px}
+
+.visa-btn{
+  display:flex;align-items:center;gap:10px;width:100%;padding:10px 10px;
+  border:1px solid transparent;border-radius:10px;background:transparent;
+  text-align:left;transition:all .15s;color:var(--text)
+}
+.visa-btn:hover{background:var(--surface2);border-color:var(--border)}
+.visa-btn.active{background:var(--teal-lt);border-color:var(--teal-md);color:var(--teal)}
+.visa-btn.primary-active{background:var(--teal);border-color:var(--teal);color:#fff}
+.visa-btn .icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;font-family:var(--mono)}
+.visa-btn.primary-active .icon{background:rgba(255,255,255,.2)}
+.visa-btn.active:not(.primary-active) .icon{background:var(--teal-md)}
+.visa-btn:not(.active):not(.primary-active) .icon{background:var(--surface2)}
+.visa-btn .btn-text{flex:1}
+.visa-btn .btn-label{font-size:13px;font-weight:600;line-height:1.2}
+.visa-btn .btn-desc{font-size:11px;opacity:.7;margin-top:1px}
+.visa-btn .badge-star{font-size:10px;opacity:.8}
+
+hr.divider{border:none;border-top:1px solid var(--border);margin:8px 0}
+
+.filter-group{padding:4px 2px}
+.filter-group label{display:block;font-size:11px;font-weight:600;color:var(--text2);margin-bottom:5px;text-transform:uppercase;letter-spacing:.05em}
+.filter-group input,.filter-group select{
+  width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:8px;
+  font:inherit;font-size:13px;background:var(--surface);color:var(--text);outline:none;
+  transition:border-color .15s
+}
+.filter-group input:focus,.filter-group select:focus{border-color:var(--teal)}
+
+.data-credit{font-size:10px;color:var(--text3);padding:8px;margin-top:auto;line-height:1.4}
+.data-credit a{color:var(--teal);text-decoration:none}
+.data-credit a:hover{text-decoration:underline}
+
+/* ── Header card ── */
+.header-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;box-shadow:var(--shadow)}
+.header-main h1{font-size:18px;font-weight:700;color:var(--text);line-height:1.2}
+.header-main p{font-size:13px;color:var(--text2);margin-top:4px}
+.updated-pill{display:flex;align-items:center;gap:6px;background:var(--teal-lt);color:var(--teal);border:1px solid var(--teal-md);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600;white-space:nowrap;flex-shrink:0}
+.updated-dot{width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.updated-dot.stale{background:var(--amber)}
+
+/* ── KPI grid ── */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow)}
+.kpi .kpi-label{font-size:11px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.kpi .kpi-val{font-size:26px;font-weight:700;color:var(--text);line-height:1;margin:6px 0 2px;font-family:var(--mono)}
+.kpi .kpi-sub{font-size:12px;color:var(--text2)}
+
+/* ── Charts row ── */
+.charts-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+.card-title{font-size:13px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+.chart-wrap{height:240px;position:relative}
+
+/* ── Map ── */
+.map-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.map-header{padding:14px 16px 0;font-size:13px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.06em}
+#map{height:420px}
+
+/* ── Table / Cards section ── */
+.list-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.list-header{padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.view-tabs{display:flex;gap:4px}
+.view-tab{padding:5px 12px;border:1px solid var(--border);border-radius:6px;background:transparent;font-size:12px;font-weight:600;color:var(--text2);transition:all .15s}
+.view-tab.active{background:var(--teal);border-color:var(--teal);color:#fff}
+.result-count{font-size:12px;color:var(--text3)}
+
+/* Table */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{padding:10px 14px;text-align:left;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);border-bottom:1px solid var(--border);background:var(--surface2)}
+td{padding:10px 14px;border-bottom:1px solid var(--border)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--surface2)}
+.post-name{font-weight:600}
+
+/* Cards grid */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;padding:16px}
+.post-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px}
+.post-card .pc-name{font-size:13px;font-weight:700;margin-bottom:8px}
+.post-card .pc-wait{font-size:11px;color:var(--text2);margin-bottom:4px}
+
+/* Wait badges */
+.wb{display:inline-flex;align-items:center;gap:4px;padding:2px 9px 2px 6px;border-radius:999px;font-size:12px;font-weight:600;font-family:var(--mono)}
+.wb::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.wb-fast{background:var(--green-lt);color:var(--green)}.wb-fast::before{background:var(--green)}
+.wb-med{background:var(--amber-lt);color:var(--amber)}.wb-med::before{background:var(--amber)}
+.wb-long{background:var(--rust-lt);color:var(--rust)}.wb-long::before{background:var(--rust)}
+.wb-ext{background:var(--purple-lt);color:var(--purple)}.wb-ext::before{background:var(--purple)}
+.wb-na{background:#f0eeea;color:var(--text3)}.wb-na::before{background:var(--text3)}
+
+/* Legend */
+.legend{display:flex;gap:12px;flex-wrap:wrap;padding:0 16px 12px;font-size:11px;color:var(--text2)}
+.legend-item{display:flex;align-items:center;gap:4px}
+.legend-dot{width:8px;height:8px;border-radius:50%}
+
+/* Banner */
+.banner{display:none;background:var(--amber-lt);border-bottom:2px solid #e8c46a;padding:8px 20px;font-size:13px;color:var(--amber);font-weight:500}
+.banner.show{display:block}
+
+/* Responsive */
+@media(max-width:960px){
+  .shell{grid-template-columns:1fr}
+  .sidebar{border-right:none;border-bottom:1px solid var(--border)}
+  .charts-row{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .header-card{flex-direction:column}
+  .kpi-grid{grid-template-columns:1fr 1fr}
+}
+
+/* Loading state */
+.loading{display:flex;align-items:center;justify-content:center;height:200px;color:var(--text3);font-size:14px}
+.spinner{width:20px;height:20px;border:2px solid var(--border);border-top-color:var(--teal);border-radius:50%;animation:spin .8s linear infinite;margin-right:10px}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ════ SIDEBAR ════ -->
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-title">U.S. Visa Wait Times</div>
+      <div class="logo-sub">Global Embassy Dashboard</div>
+    </div>
+
+    <div class="section-label">Visa Type</div>
+
+    <button class="visa-btn primary-active" id="btn-fmj" onclick="setVisa('fmj_next',this)">
+      <div class="icon">F/J</div>
+      <div class="btn-text">
+        <div class="btn-label">F · M · J</div>
+        <div class="btn-desc">Student &amp; Exchange <span class="badge-star">★ Primary</span></div>
+      </div>
+    </button>
+
+    <button class="visa-btn" id="btn-b1b2" onclick="setVisa('b1b2_next',this)">
+      <div class="icon">B</div>
+      <div class="btn-text">
+        <div class="btn-label">B1 · B2</div>
+        <div class="btn-desc">Visitor (next appt)</div>
+      </div>
+    </button>
+
+    <button class="visa-btn" id="btn-b1b2avg" onclick="setVisa('b1b2_avg',this)">
+      <div class="icon">B̄</div>
+      <div class="btn-text">
+        <div class="btn-label">B1 · B2</div>
+        <div class="btn-desc">Visitor (avg wait)</div>
+      </div>
+    </button>
+
+    <button class="visa-btn" id="btn-hlop" onclick="setVisa('hlopq_next',this)">
+      <div class="icon">H</div>
+      <div class="btn-text">
+        <div class="btn-label">H · L · O · P · Q</div>
+        <div class="btn-desc">Work &amp; Petition</div>
+      </div>
+    </button>
+
+    <button class="visa-btn" id="btn-cd" onclick="setVisa('cd_next',this)">
+      <div class="icon">C</div>
+      <div class="btn-text">
+        <div class="btn-label">C · D</div>
+        <div class="btn-desc">Crew &amp; Transit</div>
+      </div>
+    </button>
+
+    <hr class="divider">
+    <div class="section-label">Filters</div>
+
+    <div class="filter-group">
+      <label>Search post</label>
+      <input id="search" oninput="apply()" placeholder="Toronto, Mumbai…" autocomplete="off">
+    </div>
+
+    <div class="filter-group">
+      <label>Wait range</label>
+      <select id="cat" onchange="apply()">
+        <option value="all">All posts</option>
+        <option value="fast">Fast — under 1 month</option>
+        <option value="med">Medium — 1 to 3 months</option>
+        <option value="long">Long — 3 to 6 months</option>
+        <option value="ext">Extreme — over 6 months</option>
+        <option value="na">No data (N/A)</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Max wait (months)</label>
+      <input id="max" type="number" min="0" step="0.5" oninput="apply()" placeholder="No limit">
+    </div>
+
+    <div class="data-credit">
+      Data from the <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/global-visa-wait-times.html" target="_blank" rel="noopener">U.S. State Department</a>. Updated monthly via automated scraper. 0.25 = &lt;0.5 mo on source.
+    </div>
+  </aside>
+
+  <!-- ════ MAIN CONTENT ════ -->
+  <main class="content">
+
+    <div class="banner" id="banner"></div>
+
+    <!-- Header -->
+    <div class="header-card">
+      <div class="header-main">
+        <h1 id="page-title">F · M · J Visa — Student &amp; Exchange</h1>
+        <p id="page-sub">Next available interview appointment, worldwide</p>
+      </div>
+      <div class="updated-pill">
+        <div class="updated-dot" id="updated-dot"></div>
+        <span id="updated-text">Loading…</span>
+      </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="kpi-grid" id="kpis">
+      <div class="kpi"><div class="loading"><div class="spinner"></div></div></div>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts-row">
+      <div class="card">
+        <div class="card-title">Wait distribution</div>
+        <div class="chart-wrap"><canvas id="pie-chart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Longest waits (top 10)</div>
+        <div class="chart-wrap"><canvas id="bar-chart"></canvas></div>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="map-card">
+      <div class="map-header">World map — bubble size = wait time</div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#2d7a3a"></div>&lt;1 mo</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#c47a00"></div>1–3 mo</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#984018"></div>3–6 mo</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#7a3090"></div>&gt;6 mo</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#9b9890"></div>N/A</div>
+      </div>
+      <div id="map"></div>
+    </div>
+
+    <!-- Table / Cards -->
+    <div class="list-card">
+      <div class="list-header">
+        <div class="view-tabs">
+          <button class="view-tab active" id="tab-table" onclick="setView('table')">Table</button>
+          <button class="view-tab" id="tab-cards" onclick="setView('cards')">Cards</button>
+        </div>
+        <div class="result-count" id="result-count"></div>
+      </div>
+      <div id="view-table"></div>
+      <div id="view-cards" style="display:none"></div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+// ── State ──
+let allData = [];
+let activeCol = 'fmj_next';
+let leafletMap, markerLayer, pieChart, barChart;
+
+const COL_META = {
+  fmj_next:   { label: 'F · M · J — Student & Exchange',  sub: 'Next available interview appointment, worldwide' },
+  b1b2_next:  { label: 'B1 · B2 — Visitor (Next Appt)',   sub: 'Next available B1/B2 interview appointment, worldwide' },
+  b1b2_avg:   { label: 'B1 · B2 — Visitor (Average Wait)',sub: 'Average B1/B2 wait time (previous month), worldwide' },
+  hlopq_next: { label: 'H · L · O · P · Q — Work & Petition', sub: 'Next available petition-based interview appointment, worldwide' },
+  cd_next:    { label: 'C · D — Crew & Transit',           sub: 'Next available C/D interview appointment, worldwide' },
+};
+
+// ── Helpers ──
+function colorFor(v) {
+  if (v == null) return '#9b9890';
+  if (v < 1)    return '#2d7a3a';
+  if (v <= 3)   return '#c47a00';
+  if (v <= 6)   return '#984018';
+  return '#7a3090';
+}
+
+function waitBadge(v) {
+  if (v == null) return '<span class="wb wb-na">N/A</span>';
+  const cls = v < 1 ? 'wb-fast' : v <= 3 ? 'wb-med' : v <= 6 ? 'wb-long' : 'wb-ext';
+  const txt = v <= 0.25 ? '< 0.5 mo' : v + ' mo';
+  return `<span class="wb ${cls}">${txt}</span>`;
+}
+
+function fmtVal(v) {
+  if (v == null) return '—';
+  return (v <= 0.25 ? '< 0.5' : v.toString()) + ' mo';
+}
+
+// ── Data loading ──
+async function loadData() {
+  try {
+    const res = await fetch('data.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json();
+    allData = json.posts || [];
+
+    // Show updated date
+    const updated = json.last_updated || 'Unknown';
+    document.getElementById('updated-text').textContent = 'Source updated: ' + updated;
+    // Mark stale if older than ~40 days (approximate)
+    const dot = document.getElementById('updated-dot');
+    dot.className = 'updated-dot'; // fresh
+
+    apply();
+  } catch (e) {
+    document.getElementById('updated-text').textContent = 'Data load error';
+    document.getElementById('kpis').innerHTML = '<div class="loading">Could not load data.json</div>';
+    console.error(e);
+  }
+}
+
+// ── Visa type switching ──
+function setVisa(col, btn) {
+  activeCol = col;
+
+  // Update buttons
+  document.querySelectorAll('.visa-btn').forEach(b => {
+    b.classList.remove('active', 'primary-active');
+  });
+  const isFMJ = col === 'fmj_next';
+  btn.classList.add(isFMJ ? 'primary-active' : 'active');
+
+  // Banner
+  const banner = document.getElementById('banner');
+  if (isFMJ) {
+    banner.classList.remove('show');
+  } else {
+    banner.textContent = 'Viewing: ' + COL_META[col].label + ' — click F·M·J above to return to student view';
+    banner.classList.add('show');
+  }
+
+  // Header
+  document.getElementById('page-title').textContent = COL_META[col].label;
+  document.getElementById('page-sub').textContent   = COL_META[col].sub;
+
+  apply();
+}
+
+// ── View toggle ──
+function setView(v) {
+  document.getElementById('view-table').style.display = v === 'table' ? 'block' : 'none';
+  document.getElementById('view-cards').style.display = v === 'cards' ? 'block' : 'none';
+  document.getElementById('tab-table').classList.toggle('active', v === 'table');
+  document.getElementById('tab-cards').classList.toggle('active', v === 'cards');
+}
+
+// ── Apply filters ──
+function apply() {
+  if (!allData.length) return;
+  const q   = (document.getElementById('search').value || '').toLowerCase().trim();
+  const cat = document.getElementById('cat').value;
+  const max = parseFloat(document.getElementById('max').value);
+  const col = activeCol;
+
+  let rows = allData.filter(d => !q || d.name.toLowerCase().includes(q));
+  rows = rows.filter(d => {
+    const v = d[col];
+    if (cat === 'na') return v == null;
+    if (v == null)    return cat === 'all'; // hide N/A unless "all" or "na" selected
+    if (!isNaN(max) && v > max) return false;
+    if (cat === 'fast') return v < 1;
+    if (cat === 'med')  return v >= 1 && v <= 3;
+    if (cat === 'long') return v > 3 && v <= 6;
+    if (cat === 'ext')  return v > 6;
+    return true;
+  });
+
+  render(rows, col);
+}
+
+// ── Render ──
+function render(rows, col) {
+  // KPIs
+  const vals  = rows.map(d => d[col]).filter(v => v != null);
+  const avg   = vals.length ? (vals.reduce((a,b) => a+b,0)/vals.length) : null;
+  const worst = rows.filter(d=>d[col]!=null).sort((a,b)=>b[col]-a[col])[0];
+  const fast  = vals.filter(v=>v<1).length;
+  const ext   = vals.filter(v=>v>6).length;
+
+  document.getElementById('result-count').textContent = rows.length + ' posts shown';
+
+  document.getElementById('kpis').innerHTML = `
+    <div class="kpi">
+      <div class="kpi-label">Posts shown</div>
+      <div class="kpi-val">${rows.length}</div>
+      <div class="kpi-sub">of ${allData.length} total</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Average wait</div>
+      <div class="kpi-val">${avg != null ? (avg<=0.25?'<½':avg.toFixed(1)) : '—'}</div>
+      <div class="kpi-sub">${avg != null ? 'months' : 'no data'}</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Fast &lt; 1 mo</div>
+      <div class="kpi-val" style="color:var(--green)">${fast}</div>
+      <div class="kpi-sub">posts</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Extreme &gt; 6 mo</div>
+      <div class="kpi-val" style="color:var(--purple)">${ext}</div>
+      <div class="kpi-sub">posts</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Longest wait</div>
+      <div class="kpi-val" style="color:var(--rust)">${worst ? fmtVal(worst[col]) : '—'}</div>
+      <div class="kpi-sub">${worst ? worst.name : ''}</div>
+    </div>
+  `;
+
+  // Map
+  if (!leafletMap) {
+    leafletMap = L.map('map', {scrollWheelZoom: false}).setView([20, 10], 2);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'
+    }).addTo(leafletMap);
+    markerLayer = L.layerGroup().addTo(leafletMap);
+  }
+  markerLayer.clearLayers();
+  rows.forEach(d => {
+    if (!d.lat && !d.lng) return;
+    const v = d[col];
+    L.circleMarker([d.lat, d.lng], {
+      radius:      v == null ? 4 : Math.max(5, Math.min(20, v * 2 + 5)),
+      fillColor:   colorFor(v),
+      color:       '#fff',
+      weight:      1.5,
+      fillOpacity: 0.88,
+    }).bindPopup(`
+      <b style="font-size:13px">${d.name}</b><br>
+      <span style="font-size:12px;color:#666">${COL_META[col].label}</span><br>
+      <span style="font-size:14px;font-weight:700;margin-top:4px;display:block">${fmtVal(v)}</span>
+    `).addTo(markerLayer);
+  });
+
+  // Pie chart
+  const counts = {
+    fast:  vals.filter(v=>v<1).length,
+    med:   vals.filter(v=>v>=1&&v<=3).length,
+    long:  vals.filter(v=>v>3&&v<=6).length,
+    ext:   vals.filter(v=>v>6).length,
+    na:    rows.filter(d=>d[col]==null).length,
+  };
+
+  if (pieChart) pieChart.destroy();
+  pieChart = new Chart(document.getElementById('pie-chart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['< 1 mo','1–3 mo','3–6 mo','> 6 mo','N/A'],
+      datasets: [{
+        data: [counts.fast,counts.med,counts.long,counts.ext,counts.na],
+        backgroundColor: ['#2d7a3a','#c47a00','#984018','#7a3090','#ccc'],
+        borderWidth: 2,
+        borderColor: '#fff',
+      }]
+    },
+    options: {
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { family: "'IBM Plex Sans'", size: 12 }, boxWidth: 12, padding: 12 } }
+      }
+    }
+  });
+
+  // Bar chart
+  const top = [...rows].filter(d=>d[col]!=null).sort((a,b)=>b[col]-a[col]).slice(0,10);
+  if (barChart) barChart.destroy();
+  barChart = new Chart(document.getElementById('bar-chart'), {
+    type: 'bar',
+    data: {
+      labels: top.map(d => d.name),
+      datasets: [{
+        data:            top.map(d => d[col]),
+        backgroundColor: top.map(d => colorFor(d[col])),
+        borderRadius:    4,
+        borderSkipped:   false,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: '#f0eeea' }, ticks: { font: { family: "'IBM Plex Mono'" }, callback: v => v + ' mo' } },
+        y: { grid: { display: false }, ticks: { font: { family: "'IBM Plex Sans'", size: 11 } } },
+      }
+    }
+  });
+
+  // Table
+  const sorted = [...rows].sort((a,b) => {
+    if (a[col] == null && b[col] == null) return 0;
+    if (a[col] == null) return 1;
+    if (b[col] == null) return -1;
+    return a[col] - b[col];
+  });
+  document.getElementById('view-table').innerHTML = `
+    <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th>Post / City</th>
+        <th>Wait Time</th>
+        <th style="display:none">Raw</th>
+      </tr></thead>
+      <tbody>
+        ${sorted.map(d => `
+        <tr>
+          <td class="post-name">${d.name}</td>
+          <td>${waitBadge(d[col])}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>
+    </div>`;
+
+  // Cards
+  document.getElementById('view-cards').innerHTML = `
+    <div class="cards-grid">
+      ${sorted.map(d => `
+      <div class="post-card">
+        <div class="pc-name">${d.name}</div>
+        <div class="pc-wait">${COL_META[col].label.split('—')[0].trim()}</div>
+        ${waitBadge(d[col])}
+      </div>`).join('')}
+    </div>`;
+}
+
+// ── Boot ──
+loadData();
+</script>
+</body>
+</html>
