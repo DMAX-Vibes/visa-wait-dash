@@ -1,12 +1,12 @@
 {
-  "last_updated": "27-MARCH-2026",
-  "scraped_at": "2026-04-08T12:08:25Z",
+  "last_updated": "15-APRIL-2026",
+  "scraped_at": "2026-04-24T19:47:35Z",
   "posts": [
     {
       "name": "Abidjan",
       "lat": 5.3544,
       "lng": -4.008,
-      "b1b2_avg": 0.25,
+      "b1b2_avg": 7.0,
       "b1b2_next": 8.0,
       "fmj_next": 1.0,
       "hlopq_next": 6.0,
@@ -27,9 +27,9 @@
       "lat": 9.0765,
       "lng": 7.3986,
       "b1b2_avg": null,
-      "b1b2_next": 0.25,
-      "fmj_next": 0.25,
-      "hlopq_next": 0.25,
+      "b1b2_next": 6.5,
+      "fmj_next": 6.5,
+      "hlopq_next": 6.5,
       "cd_next": 0.25
     },
     {
@@ -57,16 +57,16 @@
       "lat": 9.03,
       "lng": 38.74,
       "b1b2_avg": null,
-      "b1b2_next": 1.0,
-      "fmj_next": 1.0,
-      "hlopq_next": 1.0,
-      "cd_next": 0.25
+      "b1b2_next": 2.0,
+      "fmj_next": 2.5,
+      "hlopq_next": 2.0,
+      "cd_next": 2.0
     },
     {
       "name": "Algiers",
       "lat": 36.7538,
       "lng": 3.0588,
-      "b1b2_avg": null,
+      "b1b2_avg": 5.5,
       "b1b2_next": 0.25,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
@@ -78,9 +78,9 @@
       "lng": 76.8512,
       "b1b2_avg": null,
       "b1b2_next": 1.5,
-      "fmj_next": 1.5,
-      "hlopq_next": 1.5,
-      "cd_next": 1.5
+      "fmj_next": 2.5,
+      "hlopq_next": 1.0,
+      "cd_next": 1.0
     },
     {
       "name": "Amman",
@@ -97,16 +97,16 @@
       "lat": 52.3676,
       "lng": 4.9041,
       "b1b2_avg": null,
-      "b1b2_next": 2.0,
+      "b1b2_next": 2.5,
       "fmj_next": 1.0,
       "hlopq_next": 1.0,
-      "cd_next": 1.0
+      "cd_next": 2.0
     },
     {
       "name": "Ankara",
       "lat": 39.9334,
       "lng": 32.8597,
-      "b1b2_avg": null,
+      "b1b2_avg": 1.0,
       "b1b2_next": 0.25,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
@@ -157,10 +157,10 @@
       "lat": 51.1801,
       "lng": 71.446,
       "b1b2_avg": null,
-      "b1b2_next": 3.5,
+      "b1b2_next": 3.0,
       "fmj_next": null,
-      "hlopq_next": 0.25,
-      "cd_next": 0.25
+      "hlopq_next": 1.0,
+      "cd_next": 1.0
     },
     {
       "name": "Asuncion",
@@ -177,29 +177,29 @@
       "lat": 37.9838,
       "lng": 23.7275,
       "b1b2_avg": null,
-      "b1b2_next": 2.0,
-      "fmj_next": 0.25,
+      "b1b2_next": 1.5,
+      "fmj_next": 2.0,
       "hlopq_next": 0.25,
-      "cd_next": 1.5
+      "cd_next": 1.0
     },
     {
       "name": "Auckland",
       "lat": -36.8485,
       "lng": 174.7633,
-      "b1b2_avg": 1.0,
+      "b1b2_avg": 2.5,
       "b1b2_next": 3.0,
       "fmj_next": 1.0,
       "hlopq_next": 1.5,
-      "cd_next": 2.0
+      "cd_next": 2.5
     },
     {
       "name": "Baghdad",
       "lat": 33.3152,
       "lng": 44.3661,
       "b1b2_avg": null,
-      "b1b2_next": 2.0,
-      "fmj_next": null,
-      "hlopq_next": null,
+      "b1b2_next": 4.0,
+      "fmj_next": 4.0,
+      "hlopq_next": 4.0,
       "cd_next": null
     },
     {
@@ -208,7 +208,7 @@
       "lng": 49.8671,
       "b1b2_avg": null,
       "b1b2_next": 0.25,
-      "fmj_next": 1.5,
+      "fmj_next": 0.25,
       "hlopq_next": 0.25,
       "cd_next": 0.25
     },
@@ -217,7 +217,7 @@
       "lat": 12.6392,
       "lng": -8.0029,
       "b1b2_avg": null,
-      "b1b2_next": 4.0,
+      "b1b2_next": 2.0,
       "fmj_next": null,
       "hlopq_next": null,
       "cd_next": null
@@ -237,10 +237,10 @@
       "lat": 13.7563,
       "lng": 100.5018,
       "b1b2_avg": null,
-      "b1b2_next": 2.0,
-      "fmj_next": 1.0,
-      "hlopq_next": 1.5,
-      "cd_next": 1.5
+      "b1b2_next": 1.5,
+      "fmj_next": 1.5,
+      "hlopq_next": 1.0,
+      "cd_next": 1.0
     },
     {
       "name": "Bangui",
@@ -277,10 +277,10 @@
       "lat": 39.9042,
       "lng": 116.4074,
       "b1b2_avg": null,
-      "b1b2_next": 0.25,
-      "fmj_next": 2.0,
-      "hlopq_next": 2.5,
-      "cd_next": 1.0
+      "b1b2_next": 1.5,
+      "fmj_next": 4.0,
+      "hlopq_next": 3.5,
+      "cd_next": 1.5
     },
     {
       "name": "Beirut",
@@ -297,8 +297,8 @@
       "lat": 54.5973,
       "lng": -5.9301,
       "b1b2_avg": null,
-      "b1b2_next": 1.5,
-      "fmj_next": 0.25,
+      "b1b2_next": 2.0,
+      "fmj_next": 1.0,
       "hlopq_next": 0.25,
       "cd_next": 0.25
     },
@@ -307,9 +307,9 @@
       "lat": 44.8176,
       "lng": 20.4569,
       "b1b2_avg": null,
-      "b1b2_next": 1.5,
-      "fmj_next": 1.0,
-      "hlopq_next": 0.25,
+      "b1b2_next": 2.0,
+      "fmj_next": 0.25,
+      "hlopq_next": 1.0,
       "cd_next": 1.0
     },
     {
@@ -356,18 +356,18 @@
       "name": "Bogota",
       "lat": 4.711,
       "lng": -74.0721,
-      "b1b2_avg": 10.5,
+      "b1b2_avg": 12.0,
       "b1b2_next": 9.0,
-      "fmj_next": 2.5,
-      "hlopq_next": 1.0,
-      "cd_next": 0.25
+      "fmj_next": 2.0,
+      "hlopq_next": 0.25,
+      "cd_next": 1.5
     },
     {
       "name": "Brasilia",
       "lat": -15.7801,
       "lng": -47.9292,
       "b1b2_avg": null,
-      "b1b2_next": 1.0,
+      "b1b2_next": 1.5,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
       "cd_next": 0.25
@@ -378,7 +378,7 @@
       "lng": 17.1077,
       "b1b2_avg": null,
       "b1b2_next": 1.0,
-      "fmj_next": 1.5,
+      "fmj_next": 2.0,
       "hlopq_next": 0.25,
       "cd_next": 0.25
     },
@@ -420,7 +420,7 @@
       "b1b2_next": 1.0,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
-      "cd_next": 1.0
+      "cd_next": 0.25
     },
     {
       "name": "Budapest",
@@ -437,7 +437,7 @@
       "lat": -34.6037,
       "lng": -58.3816,
       "b1b2_avg": null,
-      "b1b2_next": 1.0,
+      "b1b2_next": 0.25,
       "fmj_next": null,
       "hlopq_next": 0.25,
       "cd_next": 0.25
@@ -457,20 +457,20 @@
       "lat": 30.0444,
       "lng": 31.2357,
       "b1b2_avg": null,
-      "b1b2_next": 1.0,
-      "fmj_next": 1.0,
-      "hlopq_next": 1.0,
-      "cd_next": 1.0
+      "b1b2_next": 0.25,
+      "fmj_next": 1.5,
+      "hlopq_next": 0.25,
+      "cd_next": 0.25
     },
     {
       "name": "Calgary",
       "lat": 51.0447,
       "lng": -114.0719,
-      "b1b2_avg": 12.5,
-      "b1b2_next": 22.0,
-      "fmj_next": 0.25,
-      "hlopq_next": 0.25,
-      "cd_next": 0.25
+      "b1b2_avg": 12.0,
+      "b1b2_next": null,
+      "fmj_next": null,
+      "hlopq_next": null,
+      "cd_next": null
     },
     {
       "name": "Canberra",
@@ -487,10 +487,10 @@
       "lat": -33.9249,
       "lng": 18.4241,
       "b1b2_avg": null,
-      "b1b2_next": 2.0,
+      "b1b2_next": 3.5,
       "fmj_next": 0.25,
       "hlopq_next": 2.0,
-      "cd_next": 2.0
+      "cd_next": 3.0
     },
     {
       "name": "Caracas",
@@ -510,7 +510,7 @@
       "b1b2_next": 3.0,
       "fmj_next": 1.0,
       "hlopq_next": 3.0,
-      "cd_next": 1.0
+      "cd_next": 3.0
     },
     {
       "name": "Chengdu",
@@ -526,11 +526,11 @@
       "name": "Chennai (Madras)",
       "lat": 13.0827,
       "lng": 80.2707,
-      "b1b2_avg": 3.5,
-      "b1b2_next": 3.0,
-      "fmj_next": null,
-      "hlopq_next": null,
-      "cd_next": null
+      "b1b2_avg": 4.0,
+      "b1b2_next": 4.0,
+      "fmj_next": 1.0,
+      "hlopq_next": 3.5,
+      "cd_next": 2.0
     },
     {
       "name": "Chiang Mai",
@@ -548,7 +548,7 @@
       "lng": 28.8638,
       "b1b2_avg": null,
       "b1b2_next": 0.25,
-      "fmj_next": 0.25,
+      "fmj_next": 1.0,
       "hlopq_next": 0.25,
       "cd_next": 0.25
     },
@@ -557,17 +557,17 @@
       "lat": 31.74,
       "lng": -106.487,
       "b1b2_avg": 5.0,
-      "b1b2_next": 11.5,
-      "fmj_next": 0.25,
-      "hlopq_next": 2.0,
-      "cd_next": 2.0
+      "b1b2_next": 11.0,
+      "fmj_next": 1.0,
+      "hlopq_next": 1.0,
+      "cd_next": 1.0
     },
     {
       "name": "Colombo",
       "lat": 6.9271,
       "lng": 79.8612,
       "b1b2_avg": null,
-      "b1b2_next": 0.25,
+      "b1b2_next": 1.5,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
       "cd_next": 0.25
@@ -597,10 +597,10 @@
       "lat": 6.3654,
       "lng": 2.4183,
       "b1b2_avg": null,
-      "b1b2_next": 1.0,
-      "fmj_next": 1.0,
-      "hlopq_next": 1.0,
-      "cd_next": 1.0
+      "b1b2_next": 0.25,
+      "fmj_next": 0.25,
+      "hlopq_next": 0.25,
+      "cd_next": 0.25
     },
     {
       "name": "Curacao",
@@ -666,11 +666,11 @@
       "name": "Dhaka",
       "lat": 23.8103,
       "lng": 90.4125,
-      "b1b2_avg": 5.5,
+      "b1b2_avg": 7.5,
       "b1b2_next": 0.25,
       "fmj_next": 0.25,
-      "hlopq_next": 1.0,
-      "cd_next": 1.5
+      "hlopq_next": 0.25,
+      "cd_next": 0.25
     },
     {
       "name": "Dili",
@@ -697,19 +697,19 @@
       "lat": 25.2854,
       "lng": 51.531,
       "b1b2_avg": null,
-      "b1b2_next": 3.0,
-      "fmj_next": 3.0,
-      "hlopq_next": 3.0,
-      "cd_next": 3.0
+      "b1b2_next": 3.5,
+      "fmj_next": 3.5,
+      "hlopq_next": 3.5,
+      "cd_next": 3.5
     },
     {
       "name": "Dubai",
       "lat": 25.2048,
       "lng": 55.2708,
       "b1b2_avg": null,
-      "b1b2_next": 12.0,
-      "fmj_next": 1.0,
-      "hlopq_next": 1.0,
+      "b1b2_next": 12.5,
+      "fmj_next": 2.0,
+      "hlopq_next": 2.0,
       "cd_next": null
     },
     {
@@ -737,10 +737,10 @@
       "lat": 38.5598,
       "lng": 68.787,
       "b1b2_avg": null,
-      "b1b2_next": 2.5,
-      "fmj_next": 2.5,
-      "hlopq_next": 2.5,
-      "cd_next": 2.5
+      "b1b2_next": 2.0,
+      "fmj_next": 2.0,
+      "hlopq_next": 2.0,
+      "cd_next": 2.0
     },
     {
       "name": "Edinburgh",
@@ -758,9 +758,9 @@
       "lng": 44.0091,
       "b1b2_avg": null,
       "b1b2_next": 4.0,
-      "fmj_next": null,
-      "hlopq_next": null,
-      "cd_next": null
+      "fmj_next": 4.0,
+      "hlopq_next": 4.0,
+      "cd_next": 4.0
     },
     {
       "name": "Florence",
@@ -777,9 +777,9 @@
       "lat": 50.1109,
       "lng": 8.6821,
       "b1b2_avg": null,
-      "b1b2_next": 0.25,
-      "fmj_next": 0.25,
-      "hlopq_next": 0.25,
+      "b1b2_next": 1.0,
+      "fmj_next": 1.0,
+      "hlopq_next": 1.0,
       "cd_next": 0.25
     },
     {
@@ -787,10 +787,10 @@
       "lat": 8.4657,
       "lng": -13.2317,
       "b1b2_avg": null,
-      "b1b2_next": 1.0,
-      "fmj_next": 1.0,
-      "hlopq_next": 1.0,
-      "cd_next": 1.0
+      "b1b2_next": 0.25,
+      "fmj_next": 0.25,
+      "hlopq_next": 0.25,
+      "cd_next": 0.25
     },
     {
       "name": "Fukuoka",
@@ -798,7 +798,7 @@
       "lng": 130.4017,
       "b1b2_avg": null,
       "b1b2_next": 0.25,
-      "fmj_next": null,
+      "fmj_next": 0.25,
       "hlopq_next": null,
       "cd_next": null
     },
@@ -817,7 +817,7 @@
       "lat": 6.8013,
       "lng": -58.1551,
       "b1b2_avg": null,
-      "b1b2_next": 2.0,
+      "b1b2_next": 3.0,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
       "cd_next": 0.25
@@ -826,28 +826,28 @@
       "name": "Guadalajara",
       "lat": 20.6597,
       "lng": -103.3496,
-      "b1b2_avg": 6.0,
-      "b1b2_next": 3.0,
-      "fmj_next": 0.25,
-      "hlopq_next": 0.25,
-      "cd_next": 0.25
+      "b1b2_avg": 6.5,
+      "b1b2_next": 5.5,
+      "fmj_next": 2.0,
+      "hlopq_next": 1.5,
+      "cd_next": 1.5
     },
     {
       "name": "Guangzhou",
       "lat": 23.1291,
       "lng": 113.2644,
       "b1b2_avg": null,
-      "b1b2_next": 1.0,
-      "fmj_next": 1.0,
-      "hlopq_next": 1.0,
-      "cd_next": 1.0
+      "b1b2_next": 1.5,
+      "fmj_next": 1.5,
+      "hlopq_next": 0.25,
+      "cd_next": 1.5
     },
     {
       "name": "Guatemala City",
       "lat": 14.6349,
       "lng": -90.5069,
-      "b1b2_avg": null,
-      "b1b2_next": 1.5,
+      "b1b2_avg": 3.0,
+      "b1b2_next": 1.0,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
       "cd_next": null
@@ -856,21 +856,21 @@
       "name": "Guayaquil",
       "lat": -2.17,
       "lng": -79.9224,
-      "b1b2_avg": 4.0,
-      "b1b2_next": 4.5,
-      "fmj_next": 1.0,
+      "b1b2_avg": 3.5,
+      "b1b2_next": 4.0,
+      "fmj_next": 0.25,
       "hlopq_next": 1.0,
-      "cd_next": 0.25
+      "cd_next": 1.5
     },
     {
       "name": "Halifax",
       "lat": 44.6488,
       "lng": -63.5752,
-      "b1b2_avg": 3.5,
-      "b1b2_next": 11.5,
+      "b1b2_avg": 2.5,
+      "b1b2_next": 10.5,
       "fmj_next": 1.0,
       "hlopq_next": 1.0,
-      "cd_next": 11.5
+      "cd_next": 10.5
     },
     {
       "name": "Hamilton",
@@ -926,20 +926,20 @@
       "name": "Hermosillo",
       "lat": 29.0729,
       "lng": -110.9559,
-      "b1b2_avg": 4.0,
-      "b1b2_next": 1.5,
-      "fmj_next": 1.5,
-      "hlopq_next": 0.25,
-      "cd_next": 0.25
+      "b1b2_avg": 4.5,
+      "b1b2_next": 5.5,
+      "fmj_next": 1.0,
+      "hlopq_next": 1.0,
+      "cd_next": 1.0
     },
     {
       "name": "Ho Chi Minh City",
       "lat": 10.8231,
       "lng": 106.6297,
       "b1b2_avg": null,
-      "b1b2_next": 0.25,
-      "fmj_next": 0.25,
-      "hlopq_next": 0.25,
+      "b1b2_next": 1.0,
+      "fmj_next": 1.0,
+      "hlopq_next": 1.0,
       "cd_next": 0.25
     },
     {
@@ -956,7 +956,7 @@
       "name": "Hyderabad",
       "lat": 17.385,
       "lng": 78.4867,
-      "b1b2_avg": 6.5,
+      "b1b2_avg": 5.0,
       "b1b2_next": 8.0,
       "fmj_next": 2.5,
       "hlopq_next": 3.0,
@@ -966,18 +966,18 @@
       "name": "Islamabad",
       "lat": 33.7294,
       "lng": 73.0931,
-      "b1b2_avg": 6.5,
-      "b1b2_next": 7.0,
+      "b1b2_avg": 6.0,
+      "b1b2_next": 6.0,
       "fmj_next": 1.5,
-      "hlopq_next": 1.5,
-      "cd_next": 7.5
+      "hlopq_next": 1.0,
+      "cd_next": 0.25
     },
     {
       "name": "Istanbul",
       "lat": 41.0082,
       "lng": 28.9784,
       "b1b2_avg": null,
-      "b1b2_next": 2.0,
+      "b1b2_next": 0.25,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
       "cd_next": 0.25
@@ -989,8 +989,8 @@
       "b1b2_avg": null,
       "b1b2_next": 1.0,
       "fmj_next": 2.0,
-      "hlopq_next": 1.0,
-      "cd_next": 1.5
+      "hlopq_next": 0.25,
+      "cd_next": 1.0
     },
     {
       "name": "Jeddah",
@@ -1008,7 +1008,7 @@
       "lng": 35.2137,
       "b1b2_avg": null,
       "b1b2_next": 4.0,
-      "fmj_next": 1.0,
+      "fmj_next": 2.0,
       "hlopq_next": 2.0,
       "cd_next": 4.0
     },
@@ -1046,9 +1046,9 @@
       "name": "Kampala",
       "lat": 0.3476,
       "lng": 32.5825,
-      "b1b2_avg": 4.0,
+      "b1b2_avg": 7.0,
       "b1b2_next": 6.0,
-      "fmj_next": 1.5,
+      "fmj_next": 1.0,
       "hlopq_next": 0.25,
       "cd_next": 0.25
     },
@@ -1066,11 +1066,11 @@
       "name": "Karachi",
       "lat": 24.8607,
       "lng": 67.0011,
-      "b1b2_avg": null,
+      "b1b2_avg": 9.5,
       "b1b2_next": 9.5,
       "fmj_next": 2.0,
       "hlopq_next": 1.0,
-      "cd_next": 1.0
+      "cd_next": 0.25
     },
     {
       "name": "Kathmandu",
@@ -1108,15 +1108,15 @@
       "lng": -76.792,
       "b1b2_avg": null,
       "b1b2_next": 3.0,
-      "fmj_next": 1.0,
+      "fmj_next": 1.5,
       "hlopq_next": 0.25,
-      "cd_next": 0.25
+      "cd_next": 1.0
     },
     {
       "name": "Kinshasa",
       "lat": -4.4419,
       "lng": 15.2663,
-      "b1b2_avg": 10.0,
+      "b1b2_avg": 13.5,
       "b1b2_next": 11.5,
       "fmj_next": null,
       "hlopq_next": 3.5,
@@ -1126,10 +1126,10 @@
       "name": "Kolkata",
       "lat": 22.5726,
       "lng": 88.3639,
-      "b1b2_avg": 6.5,
-      "b1b2_next": 6.5,
-      "fmj_next": 2.5,
-      "hlopq_next": 1.5,
+      "b1b2_avg": 7.0,
+      "b1b2_next": 7.0,
+      "fmj_next": 3.5,
+      "hlopq_next": 1.0,
       "cd_next": null
     },
     {
@@ -1257,10 +1257,10 @@
       "lat": 38.7223,
       "lng": -9.1393,
       "b1b2_avg": null,
-      "b1b2_next": 1.0,
+      "b1b2_next": 0.25,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
-      "cd_next": 1.0
+      "cd_next": 0.25
     },
     {
       "name": "Ljubljana",
@@ -1287,8 +1287,8 @@
       "lat": 51.5074,
       "lng": -0.1278,
       "b1b2_avg": null,
-      "b1b2_next": 1.5,
-      "fmj_next": 0.25,
+      "b1b2_next": 2.0,
+      "fmj_next": 1.0,
       "hlopq_next": 0.25,
       "cd_next": 0.25
     },
@@ -1306,7 +1306,7 @@
       "name": "Lusaka",
       "lat": -15.3875,
       "lng": 28.3228,
-      "b1b2_avg": 7.5,
+      "b1b2_avg": 5.5,
       "b1b2_next": 0.25,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
@@ -1328,7 +1328,7 @@
       "lng": -3.7038,
       "b1b2_avg": null,
       "b1b2_next": 2.5,
-      "fmj_next": 0.25,
+      "fmj_next": 1.0,
       "hlopq_next": 0.25,
       "cd_next": 0.25
     },
@@ -1368,9 +1368,9 @@
       "lng": 50.5876,
       "b1b2_avg": null,
       "b1b2_next": 2.0,
-      "fmj_next": 2.0,
-      "hlopq_next": 2.0,
-      "cd_next": 2.0
+      "fmj_next": 2.5,
+      "hlopq_next": 2.5,
+      "cd_next": 2.5
     },
     {
       "name": "Manila",
@@ -1416,7 +1416,7 @@
       "name": "Matamoros",
       "lat": 25.8694,
       "lng": -97.5027,
-      "b1b2_avg": 10.5,
+      "b1b2_avg": 9.5,
       "b1b2_next": 6.5,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
@@ -1436,17 +1436,17 @@
       "name": "Melbourne",
       "lat": -37.8136,
       "lng": 144.9631,
-      "b1b2_avg": 3.5,
+      "b1b2_avg": 5.0,
       "b1b2_next": 12.5,
-      "fmj_next": 2.5,
+      "fmj_next": 2.0,
       "hlopq_next": 1.0,
-      "cd_next": 1.5
+      "cd_next": 1.0
     },
     {
       "name": "Merida",
       "lat": 20.9674,
       "lng": -89.5926,
-      "b1b2_avg": null,
+      "b1b2_avg": 5.5,
       "b1b2_next": 2.5,
       "fmj_next": 1.5,
       "hlopq_next": 1.0,
@@ -1468,16 +1468,16 @@
       "lng": -99.1332,
       "b1b2_avg": 5.5,
       "b1b2_next": 1.5,
-      "fmj_next": 1.0,
-      "hlopq_next": 1.0,
-      "cd_next": 1.0
+      "fmj_next": 1.5,
+      "hlopq_next": 1.5,
+      "cd_next": 1.5
     },
     {
       "name": "Milan",
       "lat": 45.4654,
       "lng": 9.1859,
       "b1b2_avg": null,
-      "b1b2_next": 1.5,
+      "b1b2_next": 0.25,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
       "cd_next": 0.25
@@ -1496,8 +1496,8 @@
       "name": "Monrovia",
       "lat": 6.3106,
       "lng": -10.8047,
-      "b1b2_avg": 2.0,
-      "b1b2_next": 9.0,
+      "b1b2_avg": 3.0,
+      "b1b2_next": 10.5,
       "fmj_next": 2.0,
       "hlopq_next": 1.0,
       "cd_next": 1.0
@@ -1506,10 +1506,10 @@
       "name": "Monterrey",
       "lat": 25.6866,
       "lng": -100.3161,
-      "b1b2_avg": 8.0,
-      "b1b2_next": 6.5,
-      "fmj_next": 0.25,
-      "hlopq_next": 0.25,
+      "b1b2_avg": 4.5,
+      "b1b2_next": 5.5,
+      "fmj_next": 1.5,
+      "hlopq_next": 1.0,
       "cd_next": null
     },
     {
@@ -1517,10 +1517,10 @@
       "lat": -34.9011,
       "lng": -56.1645,
       "b1b2_avg": null,
-      "b1b2_next": 1.5,
+      "b1b2_next": 1.0,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
-      "cd_next": 1.5
+      "cd_next": 1.0
     },
     {
       "name": "Montreal",
@@ -1546,9 +1546,9 @@
       "name": "Mumbai (Bombay)",
       "lat": 19.076,
       "lng": 72.8777,
-      "b1b2_avg": 9.0,
-      "b1b2_next": 9.0,
-      "fmj_next": 2.0,
+      "b1b2_avg": 7.0,
+      "b1b2_next": 7.5,
+      "fmj_next": 2.5,
       "hlopq_next": 1.0,
       "cd_next": 1.0
     },
@@ -1567,10 +1567,10 @@
       "lat": 23.588,
       "lng": 58.3829,
       "b1b2_avg": null,
-      "b1b2_next": 2.0,
-      "fmj_next": 2.0,
-      "hlopq_next": 2.0,
-      "cd_next": 2.0
+      "b1b2_next": 2.5,
+      "fmj_next": 2.5,
+      "hlopq_next": 2.5,
+      "cd_next": 2.5
     },
     {
       "name": "N`Djamena",
@@ -1597,10 +1597,10 @@
       "lat": -1.2921,
       "lng": 36.8219,
       "b1b2_avg": null,
-      "b1b2_next": 2.5,
+      "b1b2_next": 0.25,
       "fmj_next": 3.0,
-      "hlopq_next": 1.5,
-      "cd_next": 2.5
+      "hlopq_next": 0.25,
+      "cd_next": 0.25
     },
     {
       "name": "Naples",
@@ -1626,11 +1626,11 @@
       "name": "New Delhi",
       "lat": 28.6139,
       "lng": 77.209,
-      "b1b2_avg": 5.5,
+      "b1b2_avg": 5.0,
       "b1b2_next": 7.0,
-      "fmj_next": 0.25,
+      "fmj_next": 1.0,
       "hlopq_next": 1.0,
-      "cd_next": 0.25
+      "cd_next": 1.0
     },
     {
       "name": "Niamey",
@@ -1647,17 +1647,17 @@
       "lat": 35.1856,
       "lng": 33.3823,
       "b1b2_avg": null,
-      "b1b2_next": 2.0,
-      "fmj_next": 2.0,
-      "hlopq_next": 2.0,
-      "cd_next": 2.0
+      "b1b2_next": 0.25,
+      "fmj_next": 0.25,
+      "hlopq_next": 0.25,
+      "cd_next": 0.25
     },
     {
       "name": "Nogales",
       "lat": 31.3,
       "lng": -110.94,
       "b1b2_avg": null,
-      "b1b2_next": 1.0,
+      "b1b2_next": 0.25,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
       "cd_next": 0.25
@@ -1677,7 +1677,7 @@
       "lat": 27.4863,
       "lng": -99.5182,
       "b1b2_avg": 4.5,
-      "b1b2_next": 1.5,
+      "b1b2_next": 4.0,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
       "cd_next": 0.25
@@ -1687,10 +1687,10 @@
       "lat": 34.6937,
       "lng": 135.5022,
       "b1b2_avg": null,
-      "b1b2_next": 0.25,
-      "fmj_next": null,
+      "b1b2_next": 1.0,
+      "fmj_next": 0.25,
       "hlopq_next": 0.25,
-      "cd_next": 0.25
+      "cd_next": 1.0
     },
     {
       "name": "Oslo",
@@ -1706,10 +1706,10 @@
       "name": "Ottawa",
       "lat": 45.4215,
       "lng": -75.6972,
-      "b1b2_avg": 11.0,
-      "b1b2_next": 11.5,
-      "fmj_next": 0.25,
-      "hlopq_next": 5.5,
+      "b1b2_avg": 10.5,
+      "b1b2_next": 10.5,
+      "fmj_next": 6.5,
+      "hlopq_next": 5.0,
       "cd_next": 0.25
     },
     {
@@ -1756,7 +1756,7 @@
       "name": "Perth",
       "lat": -31.9505,
       "lng": 115.8605,
-      "b1b2_avg": 1.5,
+      "b1b2_avg": null,
       "b1b2_next": 2.0,
       "fmj_next": 2.5,
       "hlopq_next": 1.0,
@@ -1837,10 +1837,10 @@
       "lat": -30.0346,
       "lng": -51.2177,
       "b1b2_avg": null,
-      "b1b2_next": 2.5,
+      "b1b2_next": 0.25,
       "fmj_next": 1.5,
-      "hlopq_next": 1.5,
-      "cd_next": 2.5
+      "hlopq_next": 1.0,
+      "cd_next": 0.25
     },
     {
       "name": "Prague",
@@ -1887,9 +1887,9 @@
       "lat": 46.8139,
       "lng": -71.2082,
       "b1b2_avg": null,
-      "b1b2_next": 11.5,
-      "fmj_next": 7.0,
-      "hlopq_next": 5.5,
+      "b1b2_next": 10.5,
+      "fmj_next": 6.5,
+      "hlopq_next": 5.0,
       "cd_next": 0.25
     },
     {
@@ -1897,7 +1897,7 @@
       "lat": -0.1807,
       "lng": -78.4678,
       "b1b2_avg": null,
-      "b1b2_next": 2.0,
+      "b1b2_next": 1.5,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
       "cd_next": 0.25
@@ -1927,10 +1927,10 @@
       "lat": 64.1355,
       "lng": -21.8954,
       "b1b2_avg": null,
-      "b1b2_next": 0.25,
-      "fmj_next": 0.25,
-      "hlopq_next": 0.25,
-      "cd_next": 0.25
+      "b1b2_next": 1.0,
+      "fmj_next": 1.0,
+      "hlopq_next": 1.0,
+      "cd_next": 1.0
     },
     {
       "name": "Riga",
@@ -1947,7 +1947,7 @@
       "lat": -22.9068,
       "lng": -43.1729,
       "b1b2_avg": null,
-      "b1b2_next": 0.25,
+      "b1b2_next": 1.0,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
       "cd_next": 0.25
@@ -1977,7 +1977,7 @@
       "lat": 9.9281,
       "lng": -84.0907,
       "b1b2_avg": 6.0,
-      "b1b2_next": 13.0,
+      "b1b2_next": 12.0,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
       "cd_next": 0.25
@@ -2007,20 +2007,20 @@
       "lat": -33.4489,
       "lng": -70.6693,
       "b1b2_avg": 4.0,
-      "b1b2_next": 4.0,
-      "fmj_next": 1.5,
+      "b1b2_next": 4.5,
+      "fmj_next": 1.0,
       "hlopq_next": 2.0,
-      "cd_next": 1.5
+      "cd_next": 1.0
     },
     {
       "name": "Santo Domingo",
       "lat": 18.4861,
       "lng": -69.9312,
-      "b1b2_avg": 6.0,
-      "b1b2_next": 16.0,
-      "fmj_next": 0.25,
+      "b1b2_avg": 5.5,
+      "b1b2_next": 13.0,
+      "fmj_next": 1.0,
       "hlopq_next": 0.25,
-      "cd_next": 0.25
+      "cd_next": 1.0
     },
     {
       "name": "Sao Paulo",
@@ -2057,20 +2057,20 @@
       "lat": 37.5665,
       "lng": 126.978,
       "b1b2_avg": null,
-      "b1b2_next": 1.0,
-      "fmj_next": 1.0,
-      "hlopq_next": 1.0,
-      "cd_next": 1.0
+      "b1b2_next": 0.25,
+      "fmj_next": 0.25,
+      "hlopq_next": 0.25,
+      "cd_next": 0.25
     },
     {
       "name": "Shanghai",
       "lat": 31.2304,
       "lng": 121.4737,
       "b1b2_avg": null,
-      "b1b2_next": 3.5,
-      "fmj_next": 3.5,
+      "b1b2_next": 2.5,
+      "fmj_next": 1.0,
       "hlopq_next": 0.25,
-      "cd_next": 0.25
+      "cd_next": 1.0
     },
     {
       "name": "Shenyang",
@@ -2167,10 +2167,10 @@
       "lat": -33.8688,
       "lng": 151.2093,
       "b1b2_avg": 4.0,
-      "b1b2_next": 14.0,
-      "fmj_next": 2.5,
+      "b1b2_next": 15.0,
+      "fmj_next": 1.5,
       "hlopq_next": 2.0,
-      "cd_next": 1.5
+      "cd_next": 0.25
     },
     {
       "name": "Taipei",
@@ -2178,7 +2178,7 @@
       "lng": 121.5654,
       "b1b2_avg": null,
       "b1b2_next": 1.0,
-      "fmj_next": 1.5,
+      "fmj_next": 2.0,
       "hlopq_next": 0.25,
       "cd_next": 1.0
     },
@@ -2197,10 +2197,10 @@
       "lat": 41.2995,
       "lng": 69.2401,
       "b1b2_avg": null,
-      "b1b2_next": 4.0,
-      "fmj_next": 2.0,
+      "b1b2_next": 2.0,
+      "fmj_next": 0.25,
       "hlopq_next": 0.25,
-      "cd_next": 1.5
+      "cd_next": 2.0
     },
     {
       "name": "Tbilisi",
@@ -2210,17 +2210,17 @@
       "b1b2_next": 0.25,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
-      "cd_next": 0.25
+      "cd_next": 1.0
     },
     {
       "name": "Tegucigalpa",
       "lat": 14.0723,
       "lng": -87.202,
-      "b1b2_avg": null,
-      "b1b2_next": 0.25,
+      "b1b2_avg": 8.5,
+      "b1b2_next": 1.5,
       "fmj_next": 0.25,
       "hlopq_next": 0.25,
-      "cd_next": 1.0
+      "cd_next": 0.25
     },
     {
       "name": "Tel Aviv",
@@ -2236,19 +2236,19 @@
       "name": "Tijuana",
       "lat": 0,
       "lng": 0,
-      "b1b2_avg": null,
-      "b1b2_next": 1.0,
-      "fmj_next": 0.25,
-      "hlopq_next": 0.25,
-      "cd_next": 0.25
+      "b1b2_avg": 4.0,
+      "b1b2_next": 2.5,
+      "fmj_next": 1.0,
+      "hlopq_next": 1.0,
+      "cd_next": 1.0
     },
     {
       "name": "Tirana",
       "lat": 41.3275,
       "lng": 19.8187,
       "b1b2_avg": null,
-      "b1b2_next": 3.0,
-      "fmj_next": 1.0,
+      "b1b2_next": 2.0,
+      "fmj_next": 1.5,
       "hlopq_next": 0.25,
       "cd_next": null
     },
@@ -2258,7 +2258,7 @@
       "lng": 139.6503,
       "b1b2_avg": null,
       "b1b2_next": 2.0,
-      "fmj_next": 0.25,
+      "fmj_next": 1.0,
       "hlopq_next": 1.0,
       "cd_next": 1.0
     },
@@ -2266,9 +2266,9 @@
       "name": "Toronto",
       "lat": 43.6532,
       "lng": -79.3832,
-      "b1b2_avg": 17.0,
-      "b1b2_next": 17.0,
-      "fmj_next": 4.0,
+      "b1b2_avg": 14.0,
+      "b1b2_next": 14.5,
+      "fmj_next": 0.25,
       "hlopq_next": 1.5,
       "cd_next": 1.0
     },
@@ -2297,10 +2297,10 @@
       "lat": 47.8864,
       "lng": 106.9057,
       "b1b2_avg": null,
-      "b1b2_next": 3.0,
+      "b1b2_next": 2.0,
       "fmj_next": 5.5,
-      "hlopq_next": 0.25,
-      "cd_next": 0.25
+      "hlopq_next": 2.0,
+      "cd_next": 2.0
     },
     {
       "name": "Valletta",
@@ -2317,10 +2317,10 @@
       "lat": 49.2827,
       "lng": -123.1207,
       "b1b2_avg": 12.5,
-      "b1b2_next": 13.0,
-      "fmj_next": 4.5,
-      "hlopq_next": 3.0,
-      "cd_next": 1.0
+      "b1b2_next": 12.5,
+      "fmj_next": 8.5,
+      "hlopq_next": 4.5,
+      "cd_next": 0.25
     },
     {
       "name": "Vienna",
@@ -2368,7 +2368,7 @@
       "lng": 21.0122,
       "b1b2_avg": null,
       "b1b2_next": 0.25,
-      "fmj_next": 0.25,
+      "fmj_next": 1.0,
       "hlopq_next": 0.25,
       "cd_next": 0.25
     },
@@ -2420,7 +2420,7 @@
       "b1b2_next": 1.0,
       "fmj_next": 1.5,
       "hlopq_next": 0.25,
-      "cd_next": 2.0
+      "cd_next": 1.0
     },
     {
       "name": "Zagreb",
