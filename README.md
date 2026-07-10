@@ -1,4 +1,5 @@
 # U.S. Visa Wait Times — Global Dashboard
+https://dtm-repo.github.io/visa-wait-dash/
 
 A live dashboard showing U.S. visa interview wait times worldwide, pulled automatically from the [State Department's Global Visa Wait Times page](https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/global-visa-wait-times.html).
 
